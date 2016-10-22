@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{28C08156-9DBB-3BEF-B6BC-E5C8D5F745E6}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>fpdw</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>Intel C++ Compiler XE 15.0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>Intel C++ Compiler XE 15.0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>Intel C++ Compiler XE 15.0</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>Intel C++ Compiler XE 15.0</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\myproject\fastestpedestriandetectorinthewest\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fpdw.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fpdw</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\myproject\fastestpedestriandetectorinthewest\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fpdw.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fpdw</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\myproject\fastestpedestriandetectorinthewest\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">fpdw.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">fpdw</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\myproject\fastestpedestriandetectorinthewest\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">fpdw.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">fpdw</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions> -std=c++11 -msse -msse2 -msse3 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\boost\include\boost-1_58;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32;C:\myproject\fastestpedestriandetectorinthewest\src;C:\myproject\opencv\build\include;C:\myproject\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PreprocessorDefinitions>_DEBUG;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\boost\include\boost-1_58;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32;C:\myproject\fastestpedestriandetectorinthewest\src;C:\myproject\opencv\build\include;C:\myproject\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\boost\include\boost-1_58;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32;C:\myproject\fastestpedestriandetectorinthewest\src;C:\myproject\opencv\build\include;C:\myproject\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\boost\lib\boost_filesystem-vc120-mt-gd-1_58.lib;C:\boost\lib\boost_regex-vc120-mt-gd-1_58.lib;C:\boost\lib\boost_system-vc120-mt-gd-1_58.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_videostab300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_videoio300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_video300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_ts300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_superres300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_stitching300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_shape300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_photo300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_objdetect300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_ml300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_imgproc300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_imgcodecs300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_highgui300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_hal300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_flann300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_features2d300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_core300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_calib3d300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_features2d300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_ml300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_highgui300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_videoio300d.lib;vfw32.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_imgcodecs300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libjpegd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libwebpd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libpngd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libtiffd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libjasperd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\IlmImfd.lib;comctl32.lib;gdi32.lib;ole32.lib;setupapi.lib;ws2_32.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_flann300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_video300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_imgproc300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_core300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_hal300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\zlibd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\ippicvmt.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/myproject/fastestpedestriandetectorinthewest/bin/Debug/fpdw.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/myproject/fastestpedestriandetectorinthewest/bin/Debug/fpdw.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions> -std=c++11 -msse -msse2 -msse3 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\boost\include\boost-1_58;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32;C:\myproject\fastestpedestriandetectorinthewest\src;C:\myproject\opencv\build\include;C:\myproject\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\boost\include\boost-1_58;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32;C:\myproject\fastestpedestriandetectorinthewest\src;C:\myproject\opencv\build\include;C:\myproject\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\boost\include\boost-1_58;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32;C:\myproject\fastestpedestriandetectorinthewest\src;C:\myproject\opencv\build\include;C:\myproject\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;boost_filesystem-vc120-mt-1_59.lib;libboost_system-vc120-mt-1_59.lib;boost_system-vc120-mt-1_59.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_videostab300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_videoio300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_video300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_ts300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_superres300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_stitching300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_shape300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_photo300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_objdetect300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_ml300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_imgproc300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_imgcodecs300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_highgui300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_hal300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_flann300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_features2d300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_core300.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_calib3d300.lib;vfw32.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libjpeg.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libwebp.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libpng.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libtiff.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libjasper.lib;C:\myproject\opencv\build\x86\vc12\staticlib\IlmImf.lib;comctl32.lib;setupapi.lib;ws2_32.lib;C:\myproject\opencv\build\x86\vc12\staticlib\zlib.lib;C:\myproject\opencv\build\x86\vc12\staticlib\ippicvmt.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\myproject\microsoftcaffe\NugetPackages\boost_filesystem-vc120.1.59.0.0\lib\native\address-model-32\lib;C:\myproject\microsoftcaffe\NugetPackages\boost_system-vc120.1.59.0.0\lib\native\address-model-32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/myproject/fastestpedestriandetectorinthewest/bin/Release/fpdw.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/myproject/fastestpedestriandetectorinthewest/bin/Release/fpdw.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalOptions> -std=c++11 -msse -msse2 -msse3 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\boost\include\boost-1_58;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32;C:\myproject\fastestpedestriandetectorinthewest\src;C:\myproject\opencv\build\include;C:\myproject\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\boost\include\boost-1_58;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32;C:\myproject\fastestpedestriandetectorinthewest\src;C:\myproject\opencv\build\include;C:\myproject\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\boost\include\boost-1_58;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32;C:\myproject\fastestpedestriandetectorinthewest\src;C:\myproject\opencv\build\include;C:\myproject\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\boost\lib\boost_filesystem-vc120-mt-1_58.lib;C:\boost\lib\boost_regex-vc120-mt-1_58.lib;C:\boost\lib\boost_system-vc120-mt-1_58.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_videostab300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_videoio300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_video300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_ts300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_superres300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_stitching300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_shape300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_photo300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_objdetect300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_ml300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_imgproc300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_imgcodecs300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_highgui300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_hal300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_flann300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_features2d300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_core300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_calib3d300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_features2d300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_ml300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_highgui300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_videoio300d.lib;vfw32.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_imgcodecs300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libjpegd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libwebpd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libpngd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libtiffd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libjasperd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\IlmImfd.lib;comctl32.lib;gdi32.lib;ole32.lib;setupapi.lib;ws2_32.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_flann300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_video300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_imgproc300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_core300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_hal300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\zlibd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\ippicvmt.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/myproject/fastestpedestriandetectorinthewest/bin/MinSizeRel/fpdw.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/myproject/fastestpedestriandetectorinthewest/bin/MinSizeRel/fpdw.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalOptions> -std=c++11 -msse -msse2 -msse3 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\boost\include\boost-1_58;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32;C:\myproject\fastestpedestriandetectorinthewest\src;C:\myproject\opencv\build\include;C:\myproject\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\boost\include\boost-1_58;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32;C:\myproject\fastestpedestriandetectorinthewest\src;C:\myproject\opencv\build\include;C:\myproject\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\boost\include\boost-1_58;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32;C:\myproject\fastestpedestriandetectorinthewest\src;C:\myproject\opencv\build\include;C:\myproject\opencv\build\include\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\boost\lib\boost_filesystem-vc120-mt-1_58.lib;C:\boost\lib\boost_regex-vc120-mt-1_58.lib;C:\boost\lib\boost_system-vc120-mt-1_58.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_videostab300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_videoio300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_video300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_ts300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_superres300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_stitching300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_shape300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_photo300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_objdetect300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_ml300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_imgproc300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_imgcodecs300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_highgui300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_hal300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_flann300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_features2d300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_core300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_calib3d300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_features2d300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_ml300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_highgui300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_videoio300d.lib;vfw32.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_imgcodecs300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libjpegd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libwebpd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libpngd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libtiffd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\libjasperd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\IlmImfd.lib;comctl32.lib;gdi32.lib;ole32.lib;setupapi.lib;ws2_32.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_flann300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_video300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_imgproc300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_core300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\opencv_hal300d.lib;C:\myproject\opencv\build\x86\vc12\staticlib\zlibd.lib;C:\myproject\opencv\build\x86\vc12\staticlib\ippicvmt.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/myproject/fastestpedestriandetectorinthewest/bin/RelWithDebInfo/fpdw.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/myproject/fastestpedestriandetectorinthewest/bin/RelWithDebInfo/fpdw.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\myproject\fastestpedestriandetectorinthewest\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/myproject/fastestpedestriandetectorinthewest/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/myproject/fastestpedestriandetectorinthewest -BC:/myproject/fastestpedestriandetectorinthewest/buildsrc32 --check-stamp-file C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/myproject/fastestpedestriandetectorinthewest/CMakeLists.txt;C:\myproject\fastestpedestriandetectorinthewest\CMakeLists.txt;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\myproject\opencv\build\OpenCVConfig-version.cmake;C:\myproject\opencv\build\OpenCVConfig.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVConfig.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVModules.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVModules-debug.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVModules-release.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindOpenMP.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindBoost.cmake;C:\myproject\fastestpedestriandetectorinthewest\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/myproject/fastestpedestriandetectorinthewest/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/myproject/fastestpedestriandetectorinthewest -BC:/myproject/fastestpedestriandetectorinthewest/buildsrc32 --check-stamp-file C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/myproject/fastestpedestriandetectorinthewest/CMakeLists.txt;C:\myproject\fastestpedestriandetectorinthewest\CMakeLists.txt;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\myproject\opencv\build\OpenCVConfig-version.cmake;C:\myproject\opencv\build\OpenCVConfig.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVConfig.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVModules.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVModules-debug.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVModules-release.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindOpenMP.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindBoost.cmake;C:\myproject\fastestpedestriandetectorinthewest\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/myproject/fastestpedestriandetectorinthewest/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/myproject/fastestpedestriandetectorinthewest -BC:/myproject/fastestpedestriandetectorinthewest/buildsrc32 --check-stamp-file C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/myproject/fastestpedestriandetectorinthewest/CMakeLists.txt;C:\myproject\fastestpedestriandetectorinthewest\CMakeLists.txt;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\myproject\opencv\build\OpenCVConfig-version.cmake;C:\myproject\opencv\build\OpenCVConfig.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVConfig.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVModules.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVModules-debug.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVModules-release.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindOpenMP.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindBoost.cmake;C:\myproject\fastestpedestriandetectorinthewest\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/myproject/fastestpedestriandetectorinthewest/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/myproject/fastestpedestriandetectorinthewest -BC:/myproject/fastestpedestriandetectorinthewest/buildsrc32 --check-stamp-file C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/myproject/fastestpedestriandetectorinthewest/CMakeLists.txt;C:\myproject\fastestpedestriandetectorinthewest\CMakeLists.txt;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\myproject\opencv\build\OpenCVConfig-version.cmake;C:\myproject\opencv\build\OpenCVConfig.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVConfig.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVModules.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVModules-debug.cmake;C:\myproject\opencv\build\x86\vc12\staticlib\OpenCVModules-release.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindOpenMP.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindBoost.cmake;C:\myproject\fastestpedestriandetectorinthewest\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\myproject\fastestpedestriandetectorinthewest\buildsrc32\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\myproject\fastestpedestriandetectorinthewest\src\classifier.cpp" />
+    <ClCompile Include="C:\myproject\fastestpedestriandetectorinthewest\src\cutils.cpp" />
+    <ClCompile Include="C:\myproject\fastestpedestriandetectorinthewest\src\fpdw_detector.cpp" />
+    <ClCompile Include="C:\myproject\fastestpedestriandetectorinthewest\src\main.cpp" />
+    <ClCompile Include="C:\myproject\fastestpedestriandetectorinthewest\src\nms.cpp" />
+    <ClCompile Include="C:\myproject\fastestpedestriandetectorinthewest\src\utils.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
