@@ -326,3 +326,194 @@ repeated float float_data = 6;
 
 在这里就可以看到，关于操作label的一系列函数，如果我们不使用add_float_data，而是用set_float_data，也是可以的！
 上篇就到这里吧。
+在上篇中，我们已经实现了lmdb的制作，实际上就是将训练和测试的图片的信息存放在Datum中，然后再序列化到lmdb文件中。
+上篇完成了数据的准备工作，而要跑通整个实验，还需要在data_layer.cpp中做一些相应的修改。
+data_layer.cpp中的函数实现了从lmdb中读取图片信息，先是反序列化成Datum，然后再放进Blob中。仔细想一下可以知道，因为原先caffe的data_layer.cpp的实现是针对分类的情况，所以读取label部分的代码并不适用于回归的情况。
+所以本篇介绍data_layer.cpp需要修改的代码，以及训练的时候需要注意的一些细节。
+下面是我修改后的data_layer.cpp文件，主要修改了两处地方：一是DataLayerSetup函数，二是load_batch函数。同上篇一样，有//###标记的就是我修改的地方：
+
+#ifdef USE_OPENCV
+#include <opencv2/core/core.hpp>
+#endif  // USE_OPENCV
+#include <stdint.h>
+
+#include <vector>
+
+#include "caffe/data_transformer.hpp"
+#include "caffe/layers/data_layer.hpp"
+#include "caffe/util/benchmark.hpp"
+
+namespace caffe {
+
+template <typename Dtype>
+DataLayer<Dtype>::DataLayer(const LayerParameter& param)
+  : BasePrefetchingDataLayer<Dtype>(param),
+    reader_(param) {
+}
+
+template <typename Dtype>
+DataLayer<Dtype>::~DataLayer() {
+  this->StopInternalThread();
+}
+
+template <typename Dtype>
+void DataLayer<Dtype>::DataLayerSetUp(const vector<Blob<Dtype>*>& bottom,
+      const vector<Blob<Dtype>*>& top) {
+  const int batch_size = this->layer_param_.data_param().batch_size();
+  // Read a data point, and use it to initialize the top blob.
+  Datum& datum = *(reader_.full().peek());
+
+  // Use data_transformer to infer the expected blob shape from datum.
+  vector<int> top_shape = this->data_transformer_->InferBlobShape(datum);
+  this->transformed_data_.Reshape(top_shape);
+  // Reshape top[0] and prefetch_data according to the batch_size.
+  top_shape[0] = batch_size;
+  top[0]->Reshape(top_shape);
+  for (int i = 0; i < this->PREFETCH_COUNT; ++i) {
+    this->prefetch_[i].data_.Reshape(top_shape);
+  }
+  LOG(INFO) << "output data size: " << top[0]->num() << ","
+      << top[0]->channels() << "," << top[0]->height() << ","
+      << top[0]->width();
+
+  // label
+  //###
+  // if (this->output_labels_) {
+  //   vector<int> label_shape(1, batch_size);
+  //   top[1]->Reshape(label_shape);
+  //   for (int i = 0; i < this->PREFETCH_COUNT; ++i) {
+  //     this->prefetch_[i].label_.Reshape(label_shape);
+  //   }
+  // }
+
+  //###
+  int labelNum = 4;
+  if (this->output_labels_) {
+
+    vector<int> label_shape;
+    label_shape.push_back(batch_size);
+    label_shape.push_back(labelNum);
+    label_shape.push_back(1);
+    label_shape.push_back(1);
+    top[1]->Reshape(label_shape);
+    for (int i = 0; i < this->PREFETCH_COUNT; ++i) {
+      this->prefetch_[i].label_.Reshape(label_shape);
+    }
+  }
+}
+
+// This function is called on prefetch thread
+template<typename Dtype>
+void DataLayer<Dtype>::load_batch(Batch<Dtype>* batch) {
+  CPUTimer batch_timer;
+  batch_timer.Start();
+  double read_time = 0;
+  double trans_time = 0;
+  CPUTimer timer;
+  CHECK(batch->data_.count());
+  CHECK(this->transformed_data_.count());
+
+  // Reshape according to the first datum of each batch
+  // on single input batches allows for inputs of varying dimension.
+  const int batch_size = this->layer_param_.data_param().batch_size();
+  Datum& datum = *(reader_.full().peek());
+  // Use data_transformer to infer the expected blob shape from datum.
+  vector<int> top_shape = this->data_transformer_->InferBlobShape(datum);
+  this->transformed_data_.Reshape(top_shape);
+  // Reshape batch according to the batch_size.
+  top_shape[0] = batch_size;
+  batch->data_.Reshape(top_shape);
+
+  Dtype* top_data = batch->data_.mutable_cpu_data();
+  Dtype* top_label = NULL;  // suppress warnings about uninitialized variables
+
+  if (this->output_labels_) {
+    top_label = batch->label_.mutable_cpu_data();
+  }
+  for (int item_id = 0; item_id < batch_size; ++item_id) {
+    timer.Start();
+    // get a datum
+    Datum& datum = *(reader_.full().pop("Waiting for data"));
+    read_time += timer.MicroSeconds();
+    timer.Start();
+    // Apply data transformations (mirror, scale, crop...)
+    int offset = batch->data_.offset(item_id);
+    this->transformed_data_.set_cpu_data(top_data + offset);
+    this->data_transformer_->Transform(datum, &(this->transformed_data_));
+
+    // Copy label.
+    //###
+    // if (this->output_labels_) {
+    //   top_label[item_id] = datum.label();
+    // }
+
+    //###
+    int labelNum = 4;
+    if (this->output_labels_) {
+      for(int i=0;i<labelNum;i++){
+        top_label[item_id*labelNum+i] = datum.float_data(i); //read float labels
+      }
+    }
+
+
+    trans_time += timer.MicroSeconds();
+
+    reader_.free().push(const_cast<Datum*>(&datum));
+  }
+  timer.Stop();
+  batch_timer.Stop();
+  DLOG(INFO) << "Prefetch batch: " << batch_timer.MilliSeconds() << " ms.";
+  DLOG(INFO) << "     Read time: " << read_time / 1000 << " ms.";
+  DLOG(INFO) << "Transform time: " << trans_time / 1000 << " ms.";
+}
+
+INSTANTIATE_CLASS(DataLayer);
+REGISTER_LAYER_CLASS(Data);
+
+}  // namespace caffe
+
+其中，第一处修改是：
+
+  //###
+  int labelNum = 4;	//标签的数量，也就是txt中每一张图后面跟着的浮点数的数目
+  if (this->output_labels_) {
+
+    vector<int> label_shape;
+    label_shape.push_back(batch_size);
+    label_shape.push_back(labelNum);
+    label_shape.push_back(1);
+    label_shape.push_back(1);
+    top[1]->Reshape(label_shape);
+    for (int i = 0; i < this->PREFETCH_COUNT; ++i) {
+      this->prefetch_[i].label_.Reshape(label_shape);
+    }
+  }
+
+从DataLayerSetup函数传进来的参数可以看到，top是一个向量的地址，而向量的元素是Blob<Dtype>*。因为在caffe网络结构中，图片信息是分成两个Blob进行传递的，一个Blob记录图片的像素值，另外一个Blob记录图片的标签，这里的top[0]，top[1]分别与之对应（所以实际上我们要修改的是top[1]相关的内容，top[0]相关的我们并不需要管）。
+上面的代码是对top[1]的Reshape，push_back的四个值分别对应Blob的num，channels，height，width。因为top[1]对应的是标签，所以num设置为batch_size，channels设置为labelNum，height和width设置为1即可。这一步相当于是“塑造”一个适合我们数据label的Blob出来。
+第二处修改的地方是：
+
+    //###
+    int labelNum = 4;
+    if (this->output_labels_) {
+      for(int i=0;i<labelNum;i++){
+        top_label[item_id*labelNum+i] = datum.float_data(i); //read float labels
+      }
+
+这个地方是将datum中的label值赋值给top_label。
+完成了上面两处修改之后，跟上篇一样，需要回到caffe目录下，重新执行make编译一下data_layer.cpp。编译完成之后，我们的修改就生效了！这样一来，convert_imageset_regression完成了将回归数据制作成lmdb的任务，而data_layer则完成了将用于回归的lmdb成功送入后续网络的任务。
+那么，要成功运行caffe.bin进行训练，还需要注意一下下面的细节，主要是要注意网络配置文件（.prototxt）：
+1、最后一个全连接层的num_output应该与labelNum（即label的数目相等）
+2、做分类任务的时候，一般是使用SoftmaxWithLoss类型的loss层，而在做回归任务的时候，一般是用EuclideanLoss类型的loss层，因为loss主要体现在网络最后一个全连接层的输出与ground true的欧氏距离
+3、不使用Accuracy层，因为回归任务没有所谓的准确率
+4、如果要在数据层做crop，scale，mirror等操作，应该先考虑一下变换之后你的label是否也需要变化，不能像分类任务那么“直接”地用
+5、修改data_layer.cpp并重新编译之后，下次如果要进行分类任务，得记得改回去并重新编译（或者可以在github上git clone多个caffe下来，这样就不用来回修改）。
+
+完成了上面所有的工作之后就可以对自己的数据进行训练和测试了。训练之后得到caffemodel，就可以拿来应用了。应用的时候，可以用caffe的Python接口或者是继续修改源码。
+在这里，要感谢超哥的指点，使我看caffe代码的时候容易了许多。下面是他的博客以及github：
+his CSDN
+his github
+
+//###
+发现了一篇用caffe做多标签分类的博文，改代码的思路很相似，可以互相借鉴：
+http://blog.csdn.net/hubin232/article/details/50960201
